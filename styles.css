@@ -1,0 +1,92 @@
+/* styles.css */
+:root {
+  --bg: #faf7f5;
+  --text: #2d2d2d;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --accent: #e6b8c9; /* soft pastel pink */
+}
+
+body.dark {
+  --bg: #1f1f1f;
+  --text: #fdfdfd;
+  --card-bg: #2a2a2a;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --accent: #9ab3ff; /* soft pastel blue */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#themeToggle {
+  padding: 10px 20px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.06);
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px var(--card-shadow);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
